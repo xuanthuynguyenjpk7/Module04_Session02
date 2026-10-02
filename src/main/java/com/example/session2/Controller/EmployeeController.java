@@ -21,6 +21,17 @@ public class EmployeeController {
         return employeeService.getAllEmployees();
     }
 
+    @GetMapping("/{id}")
+    public Employee getEmployeeById(@PathVariable int id){
+        return employeeService.getEmployeeById(id);
+
+    }
+
+    @GetMapping("/search")
+    public List<Employee> searchEmployees(@RequestParam String name){
+        return employeeService.searchEmployeeByName(name);
+    }
+
     @PostMapping
     public Employee createEmployee(@RequestBody Employee employee){
         return employeeService.createEmployee(employee);

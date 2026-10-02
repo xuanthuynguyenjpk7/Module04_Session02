@@ -21,5 +21,23 @@ public class EmployeeRepository {
         return employee;
 
     }
+// Bài 4
+    public Employee findById(int id) {
+        for (Employee employee : employees) {
+            if (employee.getId() == id) {
+                return employee;
+            }
+        }
+        return null;
+    }
 
+    public List<Employee> findByName(String name){
+        List<Employee> result = new ArrayList<>();
+        for (Employee employee : employees) {
+        if (employee.getFullName().contains(name)) {
+            result.add(employee);
+        }
+        }
+        return result;
+    }
 }

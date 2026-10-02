@@ -24,4 +24,12 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
+    public Employee getEmployeeById(int id){
+        return employeeRepository.findById(id);
+    }
+
+    public List<Employee> searchEmployeeByName(String name){
+        return employeeRepository.findByName(name);
+    }
+
 }
